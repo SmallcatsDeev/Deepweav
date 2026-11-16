@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="잠시 멈춰 생각을 적고, 나만의 질문을 천천히 들여다보세요."
+    />
+    <title>사유 - 생각을 위한 작은 공간</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="사유 홈">
+          <span class="brand-mark" aria-hidden="true">사</span>
+          <span>사유</span>
+        </a>
+        <span class="privacy-note">
+          <span class="privacy-dot" aria-hidden="true"></span>
+          기록은 이 기기에만 저장돼요
+        </span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A LITTLE SPACE TO THINK</p>
+        <h1 id="page-title">생각이 머무를<br />자리를 만들어보세요.</h1>
+        <p class="intro-copy">
+          서두르지 않아도 괜찮아요. 마음에 남은 질문을 꺼내어 천천히 바라봐요.
+        </p>
+      </section>
+
+      <div class="workspace">
+        <section class="writing-panel" aria-labelledby="write-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TODAY, WITH YOURSELF</p>
+              <h2 id="write-title">오늘의 생각</h2>
+            </div>
+            <span class="date-label" id="today-date"></span>
+          </div>
+
+          <div class="prompt-card">
+            <div>
+              <p class="prompt-label">생각의 시작</p>
+              <p class="prompt-text" id="prompt-text">
+                요즘 내 마음속에 오래 머무는 질문은 무엇인가요?
+              </p>
+            </div>
+            <button class="prompt-button" id="next-prompt" type="button">
+              다른 질문 보기 <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <form id="reflection-form">
+            <label class="sr-only" for="reflection-title">생각의 제목</label>
+            <input
+              class="title-input"
+              id="reflection-title"
+              name="title"
+              type="text"
+              maxlength="80"
+              placeholder="오늘의 생각에 제목을 붙여보세요"
+              autocomplete="off"
+            />
+            <label class="sr-only" for="reflection-body">생각 기록</label>
+            <textarea
+              id="reflection-body"
+              name="body"
+              rows="8"
+              maxlength="5000"
+              placeholder="떠오르는 대로 적어보세요. 잘 정리된 문장이 아니어도 괜찮아요."
+              required
+            ></textarea>
+            <div class="writing-footer">
+              <span class="character-count" id="character-count">0 / 5000</span>
+              <button class="save-button" type="submit">
+                생각 저장하기 <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <aside class="entries-panel" aria-labelledby="entries-title">
+          <div class="entries-heading">
+            <div>
+              <p class="eyebrow">YOUR PRIVATE SPACE</p>
+              <h2 id="entries-title">모아둔 생각</h2>
+            </div>
+            <span class="entry-count" id="entry-count">0</span>
+          </div>
+          <label class="search-box">
+            <span class="sr-only">저장한 생각 검색</span>
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="생각 검색하기"
+              autocomplete="off"
+            />
+          </label>
+          <div class="entries-list" id="entries-list" aria-live="polite"></div>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <span>천천히 생각해도 괜찮아요.</span>
+        <span>YOUR THOUGHTS, YOUR SPACE</span>
+      </footer>
+    </main>
+  </body>
+</html>
